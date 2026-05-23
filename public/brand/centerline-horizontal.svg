@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 210" role="img" aria-labelledby="title">
+  <title id="title">Centerline Roofing &amp; Exteriors logo</title>
+  <defs>
+    <linearGradient id="shieldBlue" x1="31" x2="189" y1="18" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2f86ff"/>
+      <stop offset=".44" stop-color="#064caa"/>
+      <stop offset="1" stop-color="#061a33"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="35" x2="185" y1="14" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".48" stop-color="#d9dfe7"/>
+      <stop offset="1" stop-color="#8f9aa8"/>
+    </linearGradient>
+    <filter id="shadow" width="140%" height="150%" x="-20%" y="-25%">
+      <feDropShadow dx="0" dy="5" flood-color="#061a33" flood-opacity=".22" stdDeviation="5"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M15 35 110 9l95 26v80c0 52-38 84-95 105-57-21-95-53-95-105Z" fill="url(#silver)"/>
+    <path d="M27 44 110 22l83 22v69c0 43-30 70-83 90-53-20-83-47-83-90Z" fill="#061a33"/>
+    <path d="M38 52 110 33l72 19v59c0 37-24 59-72 78-48-19-72-41-72-78Z" fill="url(#shieldBlue)"/>
+    <path d="M54 86 110 51l56 35" fill="none" stroke="url(#silver)" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"/>
+    <path d="M59 70c-11 10-18 27-18 47 0 41 31 74 69 74s69-33 69-74c0-20-7-37-18-47" fill="none" stroke="url(#silver)" stroke-linecap="round" stroke-width="15"/>
+    <g fill="#061a33">
+      <circle cx="52" cy="103" r="3.8"/>
+      <circle cx="64" cy="145" r="3.8"/>
+      <circle cx="92" cy="169" r="3.8"/>
+      <circle cx="128" cy="169" r="3.8"/>
+      <circle cx="156" cy="145" r="3.8"/>
+      <circle cx="168" cy="103" r="3.8"/>
+    </g>
+    <text x="112" y="134" fill="#f8fafc" font-family="Arial Black, Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="-6" text-anchor="middle">CL</text>
+    <text x="115" y="131" fill="#9aa6b5" font-family="Arial Black, Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="-6" opacity=".55" text-anchor="middle">CL</text>
+    <text x="112" y="131" fill="#f8fafc" font-family="Arial Black, Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="-6" text-anchor="middle">CL</text>
+  </g>
+  <g fill="#123a73" font-family="Arial Black, Arial, sans-serif" font-weight="900">
+    <text x="240" y="97" font-size="56" letter-spacing="2">CENTERLINE</text>
+    <text x="243" y="148" font-size="26" letter-spacing="7">ROOFING &amp; EXTERIORS</text>
+  </g>
+</svg>

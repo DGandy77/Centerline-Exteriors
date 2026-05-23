@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #061a33;
+  --navy-2: #092646;
+  --blue: #1d66c2;
+  --blue-2: #2f86ff;
+  --silver: #b9c2cf;
+  --silver-2: #e7ebf0;
+  --charcoal: #1e2936;
+  --off-white: #f7f9fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--charcoal);
+  background: #ffffff;
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.metal-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at 20% 15%, rgba(47, 134, 255, 0.2), transparent 32%),
+    linear-gradient(145deg, #061a33, #0a2749 54%, #07182e);
+}
+
+.roof-texture {
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.055) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255,255,255,.04) 25%, transparent 25%);
+  background-size: 28px 28px;
+}
+
+.metal-panel.roof-texture {
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.055) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255,255,255,.04) 25%, transparent 25%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at 20% 15%, rgba(47, 134, 255, 0.2), transparent 32%),
+    linear-gradient(145deg, #061a33, #0a2749 54%, #07182e);
+  background-size: 28px 28px, 28px 28px, auto, auto, auto;
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid rgba(47, 134, 255, 0.75);
+  outline-offset: 3px;
+}
