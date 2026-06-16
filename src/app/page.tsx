@@ -3,9 +3,9 @@ import Link from "next/link";
 import { CTA } from "@/components/CTA";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
-import { PlaceholderReviews, Process, ServiceCards } from "@/components/Sections";
+import { Process, ServiceCards } from "@/components/Sections";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
-import { serviceAreas, site } from "@/lib/site";
+import { hasPublicPhone, serviceAreas, site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Roofing Company Zionsville IN",
@@ -30,9 +30,11 @@ export default function Home() {
               <Link href="/request-estimate" className="focus-ring inline-flex items-center justify-center gap-2 bg-white px-6 py-4 font-black text-[#061a33]">
                 Request Free Inspection <ArrowRight size={18} />
               </Link>
-              <Link href={site.phoneHref} className="focus-ring inline-flex items-center justify-center border border-white/40 px-6 py-4 font-black text-white">
-                Call Centerline
-              </Link>
+              {hasPublicPhone ? (
+                <Link href={site.phoneHref} className="focus-ring inline-flex items-center justify-center border border-white/40 px-6 py-4 font-black text-white">
+                  Call Centerline
+                </Link>
+              ) : null}
             </div>
             <div className="mt-8 flex flex-wrap gap-3 text-sm font-bold text-slate-200">
               {["Zionsville-based", "Family-owned", "Former Indianapolis Colts offensive lineman", "Serving Central Indiana"].map((item) => (
@@ -117,11 +119,15 @@ export default function Home() {
         <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-3xl font-black text-[#061a33] md:text-4xl">Reviews coming soon</h2>
-            <p className="mt-3 text-slate-600">Placeholder review layout only. No fake customer claims are published.</p>
+            <p className="mt-3 text-slate-600">Centerline will add real customer feedback after reviews are available and permissioned for publication.</p>
           </div>
           <Link href="/reviews" className="font-black text-[#1d66c2]">Review page</Link>
         </div>
-        <PlaceholderReviews />
+        <div className="border border-slate-200 bg-slate-50 p-6">
+          <p className="max-w-3xl leading-7 text-slate-700">
+            Until then, the site avoids fake names, ratings, and customer claims.
+          </p>
+        </div>
       </section>
       <CTA />
     </>

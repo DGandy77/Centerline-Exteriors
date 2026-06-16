@@ -4,7 +4,7 @@ import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "@/components/Logo";
-import { site } from "@/lib/site";
+import { hasPublicPhone, site } from "@/lib/site";
 
 const groups = [
   {
@@ -63,10 +63,12 @@ export function Header() {
             ))}
           </nav>
           <div className="hidden items-center gap-3 lg:flex">
-            <Link href={site.phoneHref} className="focus-ring inline-flex h-11 items-center gap-2 border border-slate-300 px-4 text-sm font-bold text-[#061a33]">
-              <Phone size={16} />
-              Call
-            </Link>
+            {hasPublicPhone ? (
+              <Link href={site.phoneHref} className="focus-ring inline-flex h-11 items-center gap-2 border border-slate-300 px-4 text-sm font-bold text-[#061a33]">
+                <Phone size={16} />
+                Call
+              </Link>
+            ) : null}
             <Link href="/request-estimate" className="focus-ring inline-flex h-11 items-center bg-[#1d66c2] px-5 text-sm font-black text-white shadow-sm hover:bg-[#1557aa]">
               Request Free Inspection
             </Link>
@@ -110,17 +112,21 @@ export function Header() {
               <Link href="/request-estimate" onClick={() => setOpen(false)} className="focus-ring bg-[#1d66c2] px-5 py-3 text-center font-black text-white">
                 Request Free Inspection
               </Link>
-              <Link href={site.phoneHref} className="focus-ring border border-slate-300 px-5 py-3 text-center font-black text-[#061a33]">
-                Call Centerline
-              </Link>
+              {hasPublicPhone ? (
+                <Link href={site.phoneHref} className="focus-ring border border-slate-300 px-5 py-3 text-center font-black text-[#061a33]">
+                  Call Centerline
+                </Link>
+              ) : null}
             </div>
           </div>
         </div>
       ) : null}
-      <Link href={site.phoneHref} className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 bg-[#061a33] px-4 py-3 text-sm font-black text-white shadow-xl lg:hidden">
-        <Phone size={16} />
-        Tap to Call
-      </Link>
+      {hasPublicPhone ? (
+        <Link href={site.phoneHref} className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 bg-[#061a33] px-4 py-3 text-sm font-black text-white shadow-xl lg:hidden">
+          <Phone size={16} />
+          Tap to Call
+        </Link>
+      ) : null}
     </>
   );
 }

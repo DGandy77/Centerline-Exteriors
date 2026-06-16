@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
+import { hasPublicPhone, site } from "@/lib/site";
 
 export function pageMetadata({
   title,
@@ -51,7 +51,7 @@ export function localBusinessSchema() {
     name: site.name,
     url: site.domain,
     email: site.email,
-    telephone: site.phone,
+    ...(hasPublicPhone ? { telephone: site.phone } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address,

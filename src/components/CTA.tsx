@@ -1,6 +1,6 @@
 import { ArrowRight, Phone } from "lucide-react";
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { hasPublicPhone, site } from "@/lib/site";
 
 export function CTA({
   title = "Ready for a clearer answer about your roof?",
@@ -20,9 +20,11 @@ export function CTA({
           <Link href="/request-estimate" className="focus-ring inline-flex items-center justify-center gap-2 bg-white px-5 py-3 font-black text-[#061a33]">
             Request Free Inspection <ArrowRight size={18} />
           </Link>
-          <Link href={site.phoneHref} className="focus-ring inline-flex items-center justify-center gap-2 border border-white/40 px-5 py-3 font-black text-white">
-            <Phone size={18} /> Call Centerline
-          </Link>
+          {hasPublicPhone ? (
+            <Link href={site.phoneHref} className="focus-ring inline-flex items-center justify-center gap-2 border border-white/40 px-5 py-3 font-black text-white">
+              <Phone size={18} /> Call Centerline
+            </Link>
+          ) : null}
         </div>
       </div>
     </section>

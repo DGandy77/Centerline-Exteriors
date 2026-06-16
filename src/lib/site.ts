@@ -4,14 +4,17 @@ export const site = {
   domain: "https://centerlineext.com",
   displayDomain: "Centerlineext.com",
   email: "Dylan@centerlineext.com",
-  phone: "TODO: add phone number",
-  phoneHref: "tel:+10000000000",
-  address: "TODO: add business address",
+  phone: "",
+  phoneHref: "",
+  address: "Zionsville, IN",
   cityState: "Zionsville, IN",
-  hours: "TODO: add business hours",
+  hours: "",
   logoNote:
     "Project includes SVG logo assets based on the provided lockup. Replace with final source logo exports if Dylan has vector artwork from the designer.",
 };
+
+export const hasPublicPhone = Boolean(site.phone && site.phoneHref);
+export const hasPublicHours = Boolean(site.hours);
 
 export const serviceAreas = [
   "Zionsville",
@@ -203,7 +206,7 @@ export const servicePages: ServicePage[] = [
     process: ["Assess exterior condition", "Identify repairable and replacement areas", "Coordinate colors and materials", "Complete a clean exterior installation"],
     benefits: ["Improved curb appeal", "Better weather protection", "Coordinated exterior planning", "Reduced maintenance concerns"],
     faqs: [
-      { question: "Does Centerline handle full siding replacement?", answer: "The site is scaffolded for siding services. Final scope, products, and manufacturer details should be confirmed before launch." },
+      { question: "Does Centerline handle full siding replacement?", answer: "Final siding scope, products, and manufacturer details should be confirmed before the project is scheduled." },
       { question: "Can siding be inspected after hail?", answer: "Yes. Siding, gutters, vents, and soft metals can all show signs of storm impact." },
       { question: "Should siding and gutters be planned together?", answer: "Often yes, especially when exterior water management or curb appeal is part of the project." },
     ],

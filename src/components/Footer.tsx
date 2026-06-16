@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { primaryServices, serviceAreas, site } from "@/lib/site";
+import { hasPublicHours, hasPublicPhone, primaryServices, serviceAreas, site } from "@/lib/site";
 import { Logo } from "@/components/Logo";
 
 export function Footer() {
@@ -11,13 +11,13 @@ export function Footer() {
             <Logo />
           </div>
           <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300">
-            Zionsville-based roofing and exterior support for homeowners and businesses across Central Indiana. Placeholder NAP details should be confirmed before launch.
+            Zionsville-based roofing and exterior support for homeowners and businesses across Central Indiana.
           </p>
           <div className="mt-5 text-sm leading-7 text-slate-300">
             <p>{site.address}</p>
             <p>{site.email}</p>
-            <p>{site.phone}</p>
-            <p>{site.hours}</p>
+            {hasPublicPhone ? <p>{site.phone}</p> : null}
+            {hasPublicHours ? <p>{site.hours}</p> : null}
           </div>
         </div>
         <div>
@@ -42,7 +42,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-5 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} Centerline Roofing & Exteriors. Built for Vercel handoff. Real license, warranty, and certification details must be verified before publishing.
+        © {new Date().getFullYear()} Centerline Roofing & Exteriors. License, warranty, and certification details must be verified before publishing.
       </div>
     </footer>
   );

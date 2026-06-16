@@ -5,7 +5,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { FAQ, CheckList } from "@/components/Sections";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, faqSchema, pageMetadata, serviceSchema } from "@/lib/seo";
-import { locationPages, primaryServices, servicePages, site } from "@/lib/site";
+import { hasPublicHours, hasPublicPhone, locationPages, primaryServices, servicePages, site } from "@/lib/site";
 import Link from "next/link";
 
 const staticPages = {
@@ -15,11 +15,11 @@ const staticPages = {
   },
   gallery: {
     title: "Roofing Project Gallery",
-    description: "Placeholder project gallery for Centerline Roofing & Exteriors roofing, storm damage, gutter, siding, and commercial work.",
+    description: "Project gallery for future Centerline Roofing & Exteriors roofing, storm damage, gutter, siding, and commercial work.",
   },
   reviews: {
     title: "Centerline Roofing Reviews",
-    description: "Review page scaffold for future Centerline Roofing & Exteriors customer reviews and Google Business Profile links.",
+    description: "Future Centerline Roofing & Exteriors customer reviews and Google Business Profile links.",
   },
   contact: {
     title: "Contact Centerline Roofing",
@@ -180,22 +180,16 @@ function GalleryPage() {
   const categories = ["Roofing", "Storm Damage", "Gutters", "Siding", "Commercial"];
   return (
     <>
-      <PageHero title="Project Gallery" text="Placeholder gallery layout for future Centerline project photography." />
+      <PageHero title="Project Gallery" text="Project photos will be added after Centerline has real jobsite photography approved for publication." />
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
         <div className="mb-6 flex flex-wrap gap-2">
           {categories.map((category) => <span key={category} className="border border-slate-200 px-3 py-2 text-sm font-bold">{category}</span>)}
         </div>
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 9 }).map((_, index) => (
-            <article key={index} className="overflow-hidden border border-dashed border-slate-300 bg-white">
-              <div className="metal-panel roof-texture aspect-[4/3]" aria-label="Placeholder project image" />
-              <div className="p-5">
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#1d66c2]">Placeholder image</p>
-                <h2 className="mt-2 text-xl font-black text-[#061a33]">Future project card {index + 1}</h2>
-                <p className="mt-2 text-sm text-slate-600">Replace with real project location, service, materials, and photography.</p>
-              </div>
-            </article>
-          ))}
+        <div className="border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-black text-[#061a33]">Photos coming soon</h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            Real project images, locations, services, and material details should be added after Dylan approves the photos and project descriptions.
+          </p>
         </div>
       </section>
     </>
@@ -205,20 +199,13 @@ function GalleryPage() {
 function ReviewsPage() {
   return (
     <>
-      <PageHero title="Reviews" text="A professional review page scaffold ready for real customer feedback and future Google Business Profile links." />
+      <PageHero title="Reviews" text="Real customer feedback will be added after Centerline has permissioned reviews ready for publication." />
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
-        <div className="grid gap-5 md:grid-cols-3">
-          {["Placeholder review", "Future Google review", "Future customer story"].map((item) => (
-            <article key={item} className="border border-dashed border-slate-300 p-6">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#1d66c2]">Not a real review</p>
-              <h2 className="mt-3 text-xl font-black text-[#061a33]">{item}</h2>
-              <p className="mt-3 leading-7 text-slate-600">This card intentionally avoids fake names, ratings, or claims. Replace it after real reviews are available.</p>
-            </article>
-          ))}
-        </div>
-        <div className="mt-10 border border-slate-200 bg-slate-50 p-6">
-          <h2 className="text-2xl font-black text-[#061a33]">Future Google review CTA</h2>
-          <p className="mt-3 text-slate-600">TODO: Add Google Business Profile review link after the profile is live.</p>
+        <div className="border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-black text-[#061a33]">Reviews coming soon</h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            Centerline will add real Google reviews or customer stories after the Google Business Profile is live and customers have given permission to publish their feedback.
+          </p>
         </div>
       </section>
     </>
@@ -234,9 +221,9 @@ function ContactPage() {
           <h2 className="text-2xl font-black text-[#061a33]">Business contact</h2>
           <div className="mt-4 space-y-3 text-slate-700">
             <p>Email: {site.email}</p>
-            <p>Phone: {site.phone}</p>
-            <p>Address: {site.address}</p>
-            <p>Hours: {site.hours}</p>
+            {hasPublicPhone ? <p>Phone: {site.phone}</p> : null}
+            <p>Service area: {site.address}</p>
+            {hasPublicHours ? <p>Hours: {site.hours}</p> : null}
           </div>
         </div>
         <div>
