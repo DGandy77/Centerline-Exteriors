@@ -15,12 +15,47 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/residential-storm-damage",
-        destination: "/storm-damage",
+        destination: "/storm-damage-restoration",
         permanent: true,
       },
       {
         source: "/insurance",
-        destination: "/insurance-claims",
+        destination: "/storm-damage-restoration",
+        permanent: true,
+      },
+      {
+        source: "/insurance-claims",
+        destination: "/storm-damage-restoration",
+        permanent: true,
+      },
+      {
+        source: "/storm-damage",
+        destination: "/storm-damage-restoration",
+        permanent: true,
+      },
+      {
+        source: "/request-estimate",
+        destination: "/request-inspection",
+        permanent: true,
+      },
+      {
+        source: "/commercial-roofing",
+        destination: "/roof-inspections",
+        permanent: true,
+      },
+      {
+        source: "/interior-restoration",
+        destination: "/roof-repair",
+        permanent: true,
+      },
+      {
+        source: "/gallery",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/reviews",
+        destination: "/",
         permanent: true,
       },
     ];

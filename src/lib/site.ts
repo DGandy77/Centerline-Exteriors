@@ -6,293 +6,132 @@ export const site = {
   email: "Dylan@centerlineext.com",
   phone: "",
   phoneHref: "",
-  address: "Zionsville, IN",
+  address: "Zionsville, Indiana",
   cityState: "Zionsville, IN",
   hours: "",
-  logoNote:
-    "Project includes SVG logo assets based on the provided lockup. Replace with final source logo exports if Dylan has vector artwork from the designer.",
 };
 
 export const hasPublicPhone = Boolean(site.phone && site.phoneHref);
 export const hasPublicHours = Boolean(site.hours);
 
-export const serviceAreas = [
-  "Zionsville",
-  "Carmel",
-  "Westfield",
-  "Indianapolis",
-  "Fishers",
-  "Noblesville",
-  "Brownsburg",
-  "Whitestown",
-];
+export const serviceAreas = ["Zionsville", "Carmel", "Westfield", "Whitestown", "Brownsburg", "Lebanon", "Fishers", "Noblesville", "Indianapolis"];
 
 export const primaryServices = [
-  {
-    title: "Roof Inspections",
-    href: "/roof-inspections",
-    summary: "Clear roof condition reports for age, leaks, storm concerns, and next-step planning.",
-  },
-  {
-    title: "Roof Replacement",
-    href: "/roof-replacement",
-    summary: "Residential roof replacement planned around protection, ventilation, curb appeal, and cleanup.",
-  },
-  {
-    title: "Roof Repair",
-    href: "/roof-repair",
-    summary: "Targeted roof repairs for leaks, missing shingles, flashing issues, and weather damage.",
-  },
-  {
-    title: "Storm Damage",
-    href: "/storm-damage",
-    summary: "Inspection, documentation, and repair planning after hail, wind, and heavy Indiana storms.",
-  },
-  {
-    title: "Gutters",
-    href: "/gutters",
-    summary: "Gutter repair and installation to move water away from the roofline and foundation.",
-  },
-  {
-    title: "Siding",
-    href: "/siding",
-    summary: "Exterior siding support for protection, weather resistance, and a cleaner home profile.",
-  },
-  {
-    title: "Commercial Roofing",
-    href: "/commercial-roofing",
-    summary: "Roofing support for offices, retail, light industrial, and managed properties.",
-  },
-  {
-    title: "Insurance Claims",
-    href: "/insurance-claims",
-    summary: "Help understanding roof condition, documenting damage, and preparing for claim conversations.",
-  },
+  { title: "Roof Inspections", href: "/roof-inspections", summary: "Understand the condition of your roof and whether anything needs attention now." },
+  { title: "Roof Repair", href: "/roof-repair", summary: "Find the source of a roofing problem and make the right repair when repair makes sense." },
+  { title: "Roof Replacement", href: "/roof-replacement", summary: "Build a complete roofing system around your home, goals, and long-term performance." },
+  { title: "Storm Damage Restoration", href: "/storm-damage-restoration", summary: "Inspect and document storm damage, then navigate restoration with clear guidance." },
+  { title: "Gutters", href: "/gutters", summary: "Manage roof runoff with a gutter system designed for your home and lasting performance." },
+  { title: "Siding", href: "/siding", summary: "Protect and transform your home with siding selected for performance and appearance." },
 ];
 
-export type ServicePage = {
-  slug: string;
-  title: string;
-  navTitle: string;
-  description: string;
-  h1: string;
-  intro: string;
-  who: string;
-  signs: string[];
-  process: string[];
-  benefits: string[];
-  faqs: { question: string; answer: string }[];
-  related: string[];
-  keyword: string;
+export type LocationPage = {
+  slug: string; city: string; title: string; description: string; hero: string; heroCopy: string;
+  introHeading: string; intro: string[]; considerationsHeading: string;
+  considerations: { title: string; text: string }[]; ctaHeading: string; ctaText: string;
 };
 
-export const servicePages: ServicePage[] = [
+export const locationPages: LocationPage[] = [
   {
-    slug: "roof-inspections",
-    title: "Free Roof Inspections in Zionsville, IN",
-    navTitle: "Roof Inspections",
-    description:
-      "Schedule a clear roof inspection with Centerline Roofing & Exteriors for homes in Zionsville and Central Indiana.",
-    h1: "Free Roof Inspections in Zionsville and Central Indiana",
-    intro:
-      "A roof inspection should give you straight answers, not pressure. Centerline checks the roof system, documents visible concerns, and explains practical next steps.",
-    who: "Homeowners who notice aging shingles, leaks, recent storm activity, home sale concerns, or just want a better understanding of roof condition.",
-    signs: ["Missing or lifted shingles", "Granule loss near downspouts", "Water marks on ceilings", "Dented vents or soft metal", "Flashing gaps around roof penetrations"],
-    process: ["Inspect the roof and exterior details", "Photograph visible concerns", "Explain repair or replacement options", "Provide next-step guidance"],
-    benefits: ["Clear documentation", "No claim approval promises", "Local Central Indiana perspective", "A practical plan before you spend money"],
-    faqs: [
-      { question: "When should I schedule a roof inspection?", answer: "After major wind or hail, before buying or selling a home, when you see a leak, or when your roof is approaching the end of its expected life." },
-      { question: "Do I need an insurance claim before an inspection?", answer: "No. An inspection can help you understand whether visible conditions are worth discussing with your insurance carrier." },
-      { question: "Will Centerline tell me if repair is enough?", answer: "Yes. The goal is to explain what the roof needs, whether that is a small repair, continued monitoring, or replacement planning." },
-    ],
-    related: ["/roof-repair", "/storm-damage", "/insurance-claims"],
-    keyword: "roof inspection Zionsville IN",
+    slug: "zionsville-in", city: "Zionsville", title: "Zionsville, IN Roofing & Exterior Contractor | Centerline",
+    description: "Centerline Roofing & Exteriors provides roof inspections, repair, replacement, storm restoration, gutters and siding for homeowners in Zionsville, Indiana.",
+    hero: "Roofing & Exterior Contractor in Zionsville, Indiana",
+    heroCopy: "Centerline Roofing & Exteriors is based right here in Zionsville. From roof inspections and repairs to complete replacements, storm damage restoration, gutters, and siding, we'll help you understand what your home needs and make a confident decision about what comes next.",
+    introHeading: "Roofing & Exterior Services for Zionsville Homes",
+    intro: ["Zionsville has an unusually broad mix of homes—from properties around the historic Village and established neighborhoods to newer developments, custom homes, and properties that extend into more rural parts of the community. Neighborhoods such as Amherst Meadows and Colony Woods sit within the same community as Stonegate, Austin Oaks, and custom-home development in Holliday Farms.", "That variety matters when you're making decisions about a roof or exterior. A straightforward repair may be all one home needs, while another project may involve complex rooflines, premium material choices, drainage concerns, or careful coordination between the roof, gutters, siding, masonry, and other exterior details.", "Centerline is locally based in Zionsville, and our approach is the same regardless of the size or style of the home: understand the property first, explain what we find, and recommend the solution that makes sense for that particular homeowner."],
+    considerationsHeading: "Different Zionsville Homes Call for Different Solutions",
+    considerations: [
+      { title: "Established, New & Custom Homes", text: "Zionsville includes older homes, newer neighborhoods, custom properties, and everything in between. Roof age, design, materials, previous work, and overall condition all affect the right recommendation." },
+      { title: "Architecture & Exterior Appearance", text: "For homeowners who care about the architectural character of their home, material selection, shingle profile, color, siding, gutters, trim, and other exterior details can be planned together rather than treated as separate decisions." },
+      { title: "Property & Drainage Conditions", text: "Trees, open areas, roof design, gutters, grading, and drainage can affect homes differently from one property to the next. We'll evaluate the conditions that actually apply to your home rather than assuming every Zionsville property needs the same solution." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Zionsville?", ctaText: "Whether you've noticed a problem, experienced storm damage, or you're planning an exterior project, start with a conversation and a free inspection. We'll help you understand what your home needs and the right way to move forward.",
   },
   {
-    slug: "roof-replacement",
-    title: "Roof Replacement Zionsville IN",
-    navTitle: "Roof Replacement",
-    description:
-      "Residential roof replacement for Zionsville, Carmel, Westfield, Indianapolis, and Central Indiana homeowners.",
-    h1: "Residential Roof Replacement Built for Indiana Homes",
-    intro:
-      "When a roof has reached the point where repairs no longer make sense, Centerline plans a replacement around protection, ventilation, curb appeal, and clean execution.",
-    who: "Homeowners dealing with an aging roof, repeated leaks, storm-related damage, worn shingles, or a planned exterior upgrade.",
-    signs: ["Curling or brittle shingles", "Recurring leaks", "Widespread granule loss", "Soft decking concerns", "Roof age that makes repairs less practical"],
-    process: ["Inspect the current roof", "Review material and ventilation options", "Plan schedule and site protection", "Install, clean, and review final work"],
-    benefits: ["Better long-term protection", "Improved curb appeal", "Coordinated ventilation details", "Cleaner project communication"],
-    faqs: [
-      { question: "How do I know if I need roof replacement?", answer: "A full inspection can show whether the issue is isolated or widespread enough that replacement is the better investment." },
-      { question: "Can Centerline help compare shingle options?", answer: "Yes. Manufacturer, color, impact rating, and warranty options should be reviewed before final selection." },
-      { question: "Will the site be cleaned after installation?", answer: "A proper roof replacement plan includes property protection, debris removal, and magnet cleanup for nails." },
-    ],
-    related: ["/roof-inspections", "/roof-repair", "/gutters"],
-    keyword: "roof replacement Zionsville IN",
+    slug: "carmel-in", city: "Carmel", title: "Carmel, IN Roofing & Exterior Contractor | Centerline",
+    description: "Roof repair, replacement, inspections, storm restoration, gutters and siding for Carmel, Indiana homeowners from Centerline Roofing & Exteriors.",
+    hero: "Roofing & Exterior Contractor in Carmel, Indiana", heroCopy: "Centerline Roofing & Exteriors helps Carmel homeowners with roof inspections, repairs, replacements, storm damage restoration, gutters, and siding—with clear guidance and attention to both how the home performs and how the finished project looks.",
+    introHeading: "Roofing & Exterior Services for Carmel Homes", intro: ["Carmel includes a wide range of residential properties—from established areas such as Home Place and neighborhoods such as Brookshire to newer construction and architecturally distinctive communities such as the Village of WestClay. That variety means the age, design, materials, and exterior priorities of one Carmel home can look very different from another.", "The right exterior solution isn't automatically the most basic option or the most expensive one. Sometimes a targeted roof repair is enough. Other projects call for a complete roofing system, upgraded siding, improved drainage, or material and color selections that deserve careful attention.", "Centerline approaches each Carmel home individually. We'll evaluate the property, help you understand the differences between your options, and build the project around your home's needs, your priorities, and what you want to accomplish."],
+    considerationsHeading: "What Matters on a Carmel Exterior Project", considerations: [
+      { title: "Performance Comes First", text: "No matter the size or value of the home, the system has to work. Roofing, flashing, ventilation, siding, and water management should be evaluated based on how the home is actually built and performing." },
+      { title: "Details & Design", text: "Performance comes first, but a well-planned exterior project should also enhance the look of your home. We'll help you consider materials, colors, profiles, trim, gutters, and other exterior details so the finished project performs exceptionally well and complements your home's architecture." },
+      { title: "Established & Growing Neighborhoods", text: "Carmel includes homes from many different periods of development. Age alone doesn't determine what a home needs, so we'll evaluate the actual condition, materials, design, and goals of the property before making a recommendation." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Carmel?", ctaText: "Whether you need an answer about a roofing problem or you're planning a larger exterior project, we'll evaluate your home, explain your options, and help you determine the right next step.",
   },
   {
-    slug: "roof-repair",
-    title: "Roof Repair Zionsville IN",
-    navTitle: "Roof Repair",
-    description:
-      "Roof repair for leaks, missing shingles, flashing problems, and storm concerns in Zionsville and Central Indiana.",
-    h1: "Roof Repair for Leaks, Weather Damage, and Wear",
-    intro:
-      "Small roof problems can become expensive when they are ignored. Centerline identifies the source, explains the repair, and helps protect the home from further damage.",
-    who: "Homeowners with active leaks, missing shingles, flashing problems, loose vents, or roof damage after wind and hail.",
-    signs: ["Ceiling stains", "Missing shingles after wind", "Loose pipe boots", "Exposed nail heads", "Drips during heavy rain"],
-    process: ["Diagnose the issue", "Document the repair area", "Explain repair scope", "Complete or schedule the work"],
-    benefits: ["Prevents avoidable interior damage", "Extends useful roof life when appropriate", "Focused repair recommendations", "Local response across Central Indiana"],
-    faqs: [
-      { question: "Can every roof leak be repaired?", answer: "Many leaks can be repaired, but widespread roof failure may require replacement. The inspection determines the right path." },
-      { question: "Do you repair storm damage?", answer: "Yes. Centerline can inspect wind and hail concerns and explain whether repair, replacement, or documentation is needed." },
-      { question: "Should I wait if a leak is small?", answer: "No. Even a small leak can damage decking, insulation, drywall, and paint over time." },
-    ],
-    related: ["/roof-inspections", "/storm-damage", "/interior-restoration"],
-    keyword: "roof repair Zionsville IN",
+    slug: "westfield-in", city: "Westfield", title: "Westfield, IN Roofing & Exterior Contractor | Centerline",
+    description: "Centerline provides roof inspections, roof repair and replacement, storm restoration, gutters and siding for homeowners throughout Westfield, Indiana.",
+    hero: "Roofing & Exterior Contractor in Westfield, Indiana", heroCopy: "Centerline Roofing & Exteriors provides Westfield homeowners with roof inspections, repairs, replacements, storm damage restoration, gutters, and siding—along with clear recommendations based on what the home actually needs.",
+    introHeading: "Roofing & Exterior Services for Westfield Homes", intro: ["Westfield has grown quickly, but its housing isn't all the same. The community includes long-established neighborhoods such as Village Farms alongside newer residential development and master-planned communities throughout the city. Westfield also includes everything from traditional residential neighborhoods to larger-lot, estate, and rural properties.", "That range is one reason we don't believe in approaching every property with the same recommendation. A newer home can still need attention after severe weather or develop a localized problem. An established home may still have years of useful roof life left. And a homeowner planning a larger exterior update may care just as much about material selection and finished appearance as the repair itself.", "We'll start with the home in front of us and help you understand the right solution from there."],
+    considerationsHeading: "Roofing & Exterior Considerations for Westfield Homes", considerations: [
+      { title: "Newer Doesn't Mean Identical", text: "Westfield's growth has created many newer neighborhoods, but roofs and exterior systems still vary in design, materials, exposure, and condition. We evaluate the individual home rather than making assumptions based on its age." },
+      { title: "Established Homes Matter Too", text: "Westfield also has mature neighborhoods and long-established properties. Repairs, replacement planning, drainage, and exterior updates should account for the home's existing construction and character." },
+      { title: "Plan the Exterior as a Whole", text: "When roofing, gutters, siding, or other visible exterior elements need attention at the same time, coordinating them can create a cleaner plan and a more cohesive finished home." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Westfield?", ctaText: "Tell us what you're seeing or what you're planning. We'll evaluate your home, answer your questions, and help you understand the right solution.",
   },
   {
-    slug: "storm-damage",
-    title: "Storm Damage Roof Repair Central Indiana",
-    navTitle: "Storm Damage",
-    description:
-      "Storm damage roof inspections and restoration support after hail, wind, and severe weather in Central Indiana.",
-    h1: "Storm Damage Roofing Support After Indiana Weather",
-    intro:
-      "Storm damage is not always obvious from the ground. Centerline helps homeowners understand roof condition, document visible issues, and plan the next step without overpromising claim outcomes.",
-    who: "Homeowners and property managers after hail, high wind, fallen limbs, lifted shingles, or sudden roof leaks.",
-    signs: ["Bruised shingles", "Dented vents and gutters", "Lifted or creased shingles", "Missing ridge caps", "New leaks after a storm"],
-    process: ["Inspect roof and exterior", "Photograph visible damage", "Review repair or replacement needs", "Coordinate work after scope is clear"],
-    benefits: ["Calm guidance after stressful weather", "Useful documentation", "Insurance-aware communication", "No unsupported claim promises"],
-    faqs: [
-      { question: "Should I file an insurance claim right away?", answer: "It is often useful to inspect first so you understand the visible condition before speaking with your carrier." },
-      { question: "Can Centerline meet with an adjuster?", answer: "Centerline can provide contractor-side documentation and be available for scope discussions when appropriate." },
-      { question: "Does storm damage always mean roof replacement?", answer: "No. The right recommendation depends on the type, severity, and spread of the damage." },
-    ],
-    related: ["/insurance-claims", "/roof-inspections", "/gutters"],
-    keyword: "storm damage roof repair Central Indiana",
+    slug: "whitestown-in", city: "Whitestown", title: "Whitestown, IN Roofing & Exterior Contractor | Centerline",
+    description: "Centerline Roofing & Exteriors provides roofing, storm restoration, gutters and siding services for homeowners in Whitestown and nearby Boone County.",
+    hero: "Roofing & Exterior Contractor in Whitestown, Indiana", heroCopy: "Centerline Roofing & Exteriors helps Whitestown homeowners understand and solve roofing and exterior problems with inspections, repair, replacement, storm damage restoration, gutters, and siding.",
+    introHeading: "Roofing & Exterior Services for Whitestown Homes", intro: ["Whitestown's rapid growth has added a large number of newer homes and neighborhoods, including communities such as Walker Farms, Maple Grove, Eagles Nest, and the Neighborhoods of Anson. At the same time, Whitestown still includes its older Legacy Core and established properties throughout the community and surrounding Boone County.", "A home doesn't have to be old to need attention—and an older home doesn't automatically need replacement. Severe weather can affect newer and older roofs alike, while flashing, ventilation, drainage, materials, installation, and previous work can all influence how a particular roof or exterior performs.", "Whether you have a specific concern or simply want to know how your roof or exterior is performing, Centerline will inspect the property, explain what we find, and help you understand the next step."],
+    considerationsHeading: "Roofing & Exterior Considerations for Whitestown Homes", considerations: [
+      { title: "Newer Homes Still Need Good Diagnostics", text: "A relatively new roof doesn't automatically rule out storm damage or a localized roofing problem. We'll evaluate what is actually happening before recommending work." },
+      { title: "Newer Neighborhoods & Established Homes", text: "Whitestown's growth has created many newer neighborhoods, but the community also includes established homes and properties throughout the older parts of town and surrounding Boone County. Different ages, rooflines, materials, lots, and drainage conditions call for different solutions." },
+      { title: "Storms Don't Check the Build Date", text: "Hail and high winds can affect roofing, gutters, siding, vents, and other exterior components regardless of when the home was built. If you're concerned after a storm, we'll help you determine whether damage is present." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Whitestown?", ctaText: "Whether something looks wrong, a storm recently moved through, or you're considering an exterior project, we'll help you understand what your home needs and what to do next.",
   },
   {
-    slug: "gutters",
-    title: "Gutter Installation Zionsville IN",
-    navTitle: "Gutters",
-    description:
-      "Gutter installation and repair for Zionsville and Central Indiana homes, coordinated with roofing and exterior work.",
-    h1: "Gutter Installation and Repair for Better Water Control",
-    intro:
-      "Gutters protect the roofline, siding, landscaping, and foundation. Centerline helps repair or replace gutter systems that are leaking, sagging, undersized, or storm damaged.",
-    who: "Homeowners with leaking seams, overflow, damaged downspouts, storm dents, or exterior upgrades that need a cleaner drainage plan.",
-    signs: ["Overflow during rain", "Pooling near foundation", "Sagging gutter runs", "Dented downspouts", "Fascia staining"],
-    process: ["Review roofline drainage", "Identify repair or replacement needs", "Plan downspout placement", "Install and clean the work area"],
-    benefits: ["Better water movement", "Reduced fascia and siding damage", "Cleaner exterior appearance", "Roofing and gutter coordination"],
-    faqs: [
-      { question: "Can gutters be replaced with a roof?", answer: "Yes. Coordinating roof and gutter work can simplify scheduling and protect the finished roofline." },
-      { question: "Do storm claims include gutters?", answer: "Sometimes. Coverage depends on policy terms and documented damage. Centerline can document visible gutter damage." },
-      { question: "What causes gutters to overflow?", answer: "Common causes include clogs, poor slope, undersized runs, damaged sections, or downspout issues." },
-    ],
-    related: ["/roof-replacement", "/storm-damage", "/siding"],
-    keyword: "gutter installation Zionsville IN",
+    slug: "brownsburg-in", city: "Brownsburg", title: "Brownsburg, IN Roofing & Exterior Contractor | Centerline",
+    description: "Centerline Roofing & Exteriors offers roof inspection, repair, replacement, storm restoration, gutters and siding in Brownsburg, Indiana.",
+    hero: "Roofing & Exterior Contractor in Brownsburg, Indiana", heroCopy: "Centerline Roofing & Exteriors provides Brownsburg homeowners with roof inspections, repairs, replacements, storm damage restoration, gutters, and siding—with recommendations based on the home, not a one-size-fits-all sales pitch.",
+    introHeading: "Roofing & Exterior Services for Brownsburg Homes", intro: ["Brownsburg continues to grow while maintaining established residential neighborhoods throughout the community. Areas such as Windridge, Eagle Crossing, Muirfield, and other neighborhoods throughout town reflect the mix of homes and development patterns found across Brownsburg.", "That mix means homeowners may be dealing with very different exterior needs—from a localized repair on an otherwise serviceable roof to an aging system, storm damage, drainage concerns, or a planned update to the home's appearance.", "The right answer depends on more than the ZIP code or age of the house. We'll look at the materials, condition, roof and exterior design, previous work, drainage, and your goals before recommending a solution."],
+    considerationsHeading: "The Right Scope Starts With the Right Evaluation", considerations: [
+      { title: "Repair, Replace or Leave It Alone", text: "Not every problem requires a major project. We'll determine whether a targeted repair is practical before recommending replacement." },
+      { title: "Protect the Whole Exterior", text: "Roofing, gutters, siding, flashing, and drainage all affect how a home handles water and weather. When one issue is connected to another, we'll explain that relationship." },
+      { title: "Performance & Appearance", text: "When homeowners are investing in replacement or an exterior update, we'll help consider both long-term performance and how the selected materials fit the home." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Brownsburg?", ctaText: "Whether you're dealing with damage or planning an improvement, we'll take the time to understand your home and help you choose the right next step.",
   },
   {
-    slug: "siding",
-    title: "Siding Contractor Zionsville IN",
-    navTitle: "Siding",
-    description:
-      "Siding and exterior restoration support for Zionsville, Carmel, Westfield, Indianapolis, and Central Indiana homes.",
-    h1: "Siding and Exterior Restoration for Central Indiana Homes",
-    intro:
-      "Siding plays a major role in curb appeal and weather protection. Centerline supports exterior repairs and replacement planning when siding is aged, damaged, or part of a larger restoration.",
-    who: "Homeowners with storm-damaged siding, cracked panels, fading, loose sections, or exterior projects involving roofing and gutters.",
-    signs: ["Cracked or loose siding", "Hail marks", "Water behind panels", "Warped sections", "Frequent caulking failures"],
-    process: ["Assess exterior condition", "Identify repairable and replacement areas", "Coordinate colors and materials", "Complete a clean exterior installation"],
-    benefits: ["Improved curb appeal", "Better weather protection", "Coordinated exterior planning", "Reduced maintenance concerns"],
-    faqs: [
-      { question: "Does Centerline handle full siding replacement?", answer: "Final siding scope, products, and manufacturer details should be confirmed before the project is scheduled." },
-      { question: "Can siding be inspected after hail?", answer: "Yes. Siding, gutters, vents, and soft metals can all show signs of storm impact." },
-      { question: "Should siding and gutters be planned together?", answer: "Often yes, especially when exterior water management or curb appeal is part of the project." },
-    ],
-    related: ["/gutters", "/storm-damage", "/roof-replacement"],
-    keyword: "siding contractor Zionsville IN",
+    slug: "lebanon-in", city: "Lebanon", title: "Lebanon, IN Roofing & Exterior Contractor | Centerline",
+    description: "Centerline Roofing & Exteriors provides roof inspections, repair, replacement, storm restoration, gutters and siding for Lebanon, Indiana homeowners.",
+    hero: "Roofing & Exterior Contractor in Lebanon, Indiana", heroCopy: "Centerline Roofing & Exteriors serves Lebanon homeowners with roof inspections, repairs, replacements, storm damage restoration, gutters, and siding throughout a community that includes both established neighborhoods and significant new growth.",
+    introHeading: "Roofing & Exterior Services for Lebanon Homes", intro: ["Lebanon has a strong base of established homes and neighborhoods while continued growth in Boone County is bringing new housing and development to the area.", "That means the exterior needs of one Lebanon homeowner can look very different from those of another. An established property may need a repair, maintenance, or thoughtful replacement plan based on age and previous work. A newer home may have a storm concern or a specific exterior issue that needs to be diagnosed. And homeowners improving a property may be considering roofing, gutters, siding, or several parts of the exterior together.", "Centerline will start with the property itself, explain what we find, and help you understand the right solution."],
+    considerationsHeading: "Established Community. Continued Growth. Individual Solutions.", considerations: [
+      { title: "Existing Homes", text: "Older and established homes deserve an evaluation that accounts for current condition, past repairs, materials, roof design, and the rest of the exterior system." },
+      { title: "New Growth", text: "As new housing continues to develop around Lebanon and Boone County, newer properties may have very different roofing and exterior needs from long-established neighborhoods." },
+      { title: "Plan for the Home You Have", text: "Whether the goal is solving a problem or improving the property, we'll recommend materials and scope based on the home, your priorities, and what makes sense for the investment." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Lebanon?", ctaText: "Start with a free inspection. We'll understand your concerns, evaluate the property, and help you determine the right way to move forward.",
   },
   {
-    slug: "commercial-roofing",
-    title: "Commercial Roofing Central Indiana",
-    navTitle: "Commercial Roofing",
-    description:
-      "Commercial roofing support for Central Indiana offices, retail buildings, light industrial properties, and managed facilities.",
-    h1: "Commercial Roofing Support for Central Indiana Properties",
-    intro:
-      "Commercial roofs need practical planning, clear communication, and minimal disruption. Centerline supports inspections, repairs, replacement planning, and storm documentation.",
-    who: "Building owners, property managers, small businesses, retail centers, offices, and light industrial facilities.",
-    signs: ["Ponding water", "Membrane punctures", "Open seams", "Interior ceiling stains", "Storm-related roof concerns"],
-    process: ["Inspect roof and drainage", "Document roof condition", "Prioritize urgent concerns", "Plan repair or replacement scope"],
-    benefits: ["Clear property documentation", "Reduced business disruption", "Practical maintenance planning", "Local accountability"],
-    faqs: [
-      { question: "What commercial roof systems will Centerline handle?", answer: "Final system certifications should be confirmed before launch. The page is written broadly for inspection, repair, and replacement planning." },
-      { question: "Can you inspect a roof before a property purchase?", answer: "Yes. A roof condition review can help buyers and owners understand likely maintenance or replacement needs." },
-      { question: "Do commercial storm claims need documentation?", answer: "Documentation is important. Centerline can photograph visible damage and help organize contractor-side information." },
-    ],
-    related: ["/roof-inspections", "/storm-damage", "/insurance-claims"],
-    keyword: "commercial roofing Central Indiana",
+    slug: "fishers-in", city: "Fishers", title: "Fishers, IN Roofing & Exterior Contractor | Centerline",
+    description: "Centerline provides roof inspections, roof repairs and replacements, storm restoration, gutters and siding for homeowners throughout Fishers, Indiana.",
+    hero: "Roofing & Exterior Contractor in Fishers, Indiana", heroCopy: "Centerline Roofing & Exteriors provides Fishers homeowners with clear answers for roof inspections, repair, replacement, storm damage restoration, gutters, and siding.",
+    introHeading: "Roofing & Exterior Services for Fishers Homes", intro: ["Fishers has expanded considerably over the last several decades, creating a broad mix of existing and newer neighborhoods across the city. That includes established areas such as Sunblest Farms, the Sandstone communities, newer development around Saxony, and homes throughout the Geist area.", "Those properties don't all face the same exterior conditions. Roof age, architecture, nearby trees, drainage, storm exposure, gutters, siding, and the way a home sits on its lot can all change the conversation.", "Centerline doesn't begin with a predetermined solution. We'll evaluate your property, explain what we're seeing, and help you decide whether the right answer is maintenance, repair, replacement, storm restoration, or a larger exterior improvement."],
+    considerationsHeading: "One City, Many Different Homes", considerations: [
+      { title: "New & Established Neighborhoods", text: "Fishers includes homes built across very different periods of growth. We'll base our recommendation on the condition of your home—not simply the age of the neighborhood." },
+      { title: "Lot & Drainage Differences", text: "Some properties have heavier tree coverage, different drainage conditions, or unique roof and gutter layouts. When those factors matter to the performance of the home, we'll include them in the evaluation." },
+      { title: "Appearance Matters Too", text: "Performance comes first, but roofing, siding, gutters, trim, colors, and other exterior details all contribute to the finished appearance of a home. When you're planning a larger project, we'll help those decisions work together." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Fishers?", ctaText: "Start with a free inspection. We'll take a look at the property, explain what we find, and help you understand the right next step for your home.",
   },
   {
-    slug: "insurance-claims",
-    title: "Insurance Roof Claim Help Indiana",
-    navTitle: "Insurance Claims",
-    description:
-      "Insurance-aware roof inspection and documentation support for storm damage claims in Zionsville and Central Indiana.",
-    h1: "Insurance Claim Assistance for Roof and Exterior Damage",
-    intro:
-      "Insurance claims can feel confusing. Centerline helps homeowners understand visible damage, organize documentation, and communicate clearly while avoiding promises only a carrier can make.",
-    who: "Homeowners considering a roof claim after hail, wind, fallen debris, or related exterior damage.",
-    signs: ["Recent hail or high wind", "Damaged shingles or vents", "Dented gutters", "Interior water stains", "Carrier-requested contractor estimates"],
-    process: ["Inspect and document condition", "Explain visible findings", "Prepare repair or replacement scope", "Coordinate work after approved direction"],
-    benefits: ["Clearer claim conversations", "Better damage documentation", "Practical contractor estimates", "Honest expectations"],
-    faqs: [
-      { question: "Can Centerline guarantee my claim is approved?", answer: "No. Claim decisions are made by the insurance carrier. Centerline can document visible conditions and provide contractor information." },
-      { question: "Should I call my carrier or a roofer first?", answer: "Many homeowners choose a roof inspection first so they understand visible conditions before opening a claim." },
-      { question: "Can you review an insurance scope?", answer: "Centerline can review contractor-related scope details and identify questions to clarify with the carrier." },
-    ],
-    related: ["/storm-damage", "/roof-inspections", "/roof-replacement"],
-    keyword: "insurance roof claim help Indiana",
+    slug: "noblesville-in", city: "Noblesville", title: "Noblesville, IN Roofing & Exterior Contractor | Centerline",
+    description: "Roof inspections, repair, replacement, storm restoration, gutters and siding for Noblesville, Indiana homeowners from Centerline Roofing & Exteriors.",
+    hero: "Roofing & Exterior Contractor in Noblesville, Indiana", heroCopy: "From roofing concerns to larger exterior projects, Centerline Roofing & Exteriors helps Noblesville homeowners understand their options and choose the right solution for their home.",
+    introHeading: "Roofing & Exterior Services for Noblesville Homes", intro: ["Noblesville combines an established historic community with suburban neighborhoods and continued residential growth. Homes near the city's older core can have very different construction histories from established communities such as South Harbour or Lochaven and newer or custom-home development such as Sagamore.", "Exterior decisions should account for those differences. The right repair for an established home may look very different from the right plan for a newer roof affected by a storm or a homeowner preparing for a complete exterior update.", "Centerline will help you understand the actual condition of your roof or exterior, what needs attention, what doesn't, and which options make the most sense for your home."],
+    considerationsHeading: "Recommendations Built Around the Property", considerations: [
+      { title: "Older & Newer Homes", text: "Materials, roof design, previous repairs, ventilation, and overall condition can vary widely across Noblesville. Those details matter more than applying the same recommendation to every home." },
+      { title: "Repair Before Replacement When It Makes Sense", text: "An aging or damaged area doesn't automatically mean the entire roof or exterior needs replacement. We'll look at the larger system before recommending the scope." },
+      { title: "Complete Exterior Planning", text: "For projects involving roofing, siding, gutters, or multiple exterior components, we'll help make sure the individual decisions work together both functionally and visually." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Noblesville?", ctaText: "Tell us what's going on with your home. We'll evaluate the concern, answer your questions, and help you understand the best path forward.",
   },
   {
-    slug: "interior-restoration",
-    title: "Interior Restoration After Roof Leaks",
-    navTitle: "Interior Restoration",
-    description:
-      "Interior restoration planning for water stains and damage related to roof leaks and storm events in Central Indiana.",
-    h1: "Interior Restoration After Roof Leaks and Storm Damage",
-    intro:
-      "When roof damage reaches the inside of the home, the exterior fix and interior repair need to be coordinated. Centerline helps connect the roof issue to the restoration plan.",
-    who: "Homeowners with ceiling stains, drywall damage, paint damage, or moisture concerns connected to a roofing or storm event.",
-    signs: ["Water stains", "Soft drywall", "Peeling paint", "Musty smells", "Recurring ceiling discoloration"],
-    process: ["Identify the roof source", "Document interior impact", "Stop active water intrusion", "Plan interior repair scope"],
-    benefits: ["Roof-first problem solving", "Better documentation", "Cleaner restoration planning", "Reduced repeat damage risk"],
-    faqs: [
-      { question: "Should the roof be fixed before interior repairs?", answer: "Yes. Interior work should wait until the water source is identified and addressed." },
-      { question: "Can roof leaks damage insulation?", answer: "Yes. Moisture can affect insulation, drywall, paint, and framing depending on severity and duration." },
-      { question: "Is interior restoration part of a storm claim?", answer: "It may be, depending on the event and policy. The insurance carrier determines coverage." },
-    ],
-    related: ["/roof-repair", "/storm-damage", "/insurance-claims"],
-    keyword: "interior restoration roof leak Indiana",
+    slug: "indianapolis-in", city: "Indianapolis", title: "Indianapolis Roofing & Exterior Contractor | Centerline",
+    description: "Centerline provides residential roof inspections, repair, replacement, storm restoration, gutters and siding throughout Indianapolis, Indiana.",
+    hero: "Roofing & Exterior Contractor in Indianapolis, Indiana", heroCopy: "Centerline Roofing & Exteriors helps Indianapolis homeowners with roof inspections, repairs, replacements, storm damage restoration, gutters, and siding—with clear guidance built around the individual home.",
+    introHeading: "Roofing & Exterior Services Across Indianapolis", intro: ["Indianapolis is too large and varied for one description of an “Indianapolis home.” Established north-side neighborhoods such as Butler-Tarkington and Meridian-Kessler alone contain a wide range of architecture, while areas such as Broad Ripple, Nora, and suburban-style neighborhoods farther from the city's core add even more variety.", "Across Indianapolis, you'll also find newer construction, larger-lot properties, and homes that have gone through decades of additions and exterior updates.", "That's exactly why a roofing or exterior recommendation needs to begin at the property rather than with a generic scope. Roof design, age, materials, flashing, ventilation, storm exposure, drainage, previous repairs, and the condition of the surrounding exterior can differ dramatically from one home to the next."],
+    considerationsHeading: "Indianapolis Homes Don't Fit One Template", considerations: [
+      { title: "A Wide Range of Housing", text: "Older homes, newer subdivisions, traditional neighborhoods, and larger properties can all require very different approaches to roofing and exterior work." },
+      { title: "Previous Work Matters", text: "Homes that have been repaired, remodeled, or added onto over time can have transitions, flashing, ventilation, or material combinations that deserve careful attention during an inspection." },
+      { title: "Solve the Actual Problem", text: "A roof leak, storm concern, failing gutter, or aging siding can have several possible causes. We'll diagnose the condition before deciding what scope of work makes sense." },
+    ], ctaHeading: "Need Roofing or Exterior Help in Indianapolis?", ctaText: "Tell us what you're seeing and where the property is located. We'll evaluate the home, explain what we find, and help you determine the right next step.",
   },
 ];
-
-export const locationPages = [
-  { slug: "zionsville-in", city: "Zionsville", title: "Roofing Company Zionsville IN", keyword: "roofing company Zionsville IN" },
-  { slug: "carmel-in", city: "Carmel", title: "Roofing Contractor Carmel IN", keyword: "roofing contractor Carmel IN" },
-  { slug: "westfield-in", city: "Westfield", title: "Roofing Contractor Westfield IN", keyword: "roofing contractor Westfield IN" },
-  { slug: "indianapolis-in", city: "Indianapolis", title: "Indianapolis Roof Repair & Replacement", keyword: "Indianapolis roof repair" },
-  { slug: "fishers-in", city: "Fishers", title: "Roofing Contractor Fishers IN", keyword: "roofing contractor Fishers IN" },
-  { slug: "noblesville-in", city: "Noblesville", title: "Roofing Contractor Noblesville IN", keyword: "roofing contractor Noblesville IN" },
-  { slug: "brownsburg-in", city: "Brownsburg", title: "Roofing Contractor Brownsburg IN", keyword: "roofing contractor Brownsburg IN" },
-  { slug: "whitestown-in", city: "Whitestown", title: "Roofing Contractor Whitestown IN", keyword: "roofing contractor Whitestown IN" },
-];
-
-export const placeholderNotes = {
-  phone: "Replace site.phone and site.phoneHref when Dylan confirms the business phone.",
-  address: "Replace site.address when the public NAP address is confirmed.",
-  reviews: "Review cards are intentionally labeled as placeholders and should be replaced with real customer reviews before public launch.",
-  gallery: "Gallery cards use CSS placeholder panels until real project photography is available.",
-  certifications: "Do not add manufacturer certifications, license numbers, warranties, or financing claims until verified.",
-};

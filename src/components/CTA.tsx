@@ -3,11 +3,13 @@ import Link from "next/link";
 import { hasPublicPhone, site } from "@/lib/site";
 
 export function CTA({
-  title = "Ready for a clearer answer about your roof?",
-  text = "Request a free inspection or estimate and Centerline will help you understand the right next step.",
+  title = "Ready for a Clear Answer?",
+  text = "Whether you know exactly what your home needs or you're not sure where to start, we're here to help. Schedule a free inspection and we'll help you determine the right next step.",
+  button = "Request a Free Inspection",
 }: {
   title?: string;
   text?: string;
+  button?: string;
 }) {
   return (
     <section className="metal-panel roof-texture text-white">
@@ -17,8 +19,8 @@ export function CTA({
           <p className="mt-3 max-w-2xl text-slate-200">{text}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Link href="/request-estimate" className="focus-ring inline-flex items-center justify-center gap-2 bg-white px-5 py-3 font-black text-[#061a33]">
-            Request Free Inspection <ArrowRight size={18} />
+          <Link href="/request-inspection" className="focus-ring inline-flex items-center justify-center gap-2 bg-white px-5 py-3 font-black text-[#061a33]">
+            {button} <ArrowRight size={18} />
           </Link>
           {hasPublicPhone ? (
             <Link href={site.phoneHref} className="focus-ring inline-flex items-center justify-center gap-2 border border-white/40 px-5 py-3 font-black text-white">

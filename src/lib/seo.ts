@@ -12,7 +12,7 @@ export function pageMetadata({
 }): Metadata {
   const url = `${site.domain}${path}`;
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -54,12 +54,11 @@ export function localBusinessSchema() {
     ...(hasPublicPhone ? { telephone: site.phone } : {}),
     address: {
       "@type": "PostalAddress",
-      streetAddress: site.address,
       addressLocality: "Zionsville",
       addressRegion: "IN",
       addressCountry: "US",
     },
-    areaServed: ["Zionsville", "Carmel", "Westfield", "Indianapolis", "Fishers", "Noblesville", "Brownsburg", "Whitestown"],
+    areaServed: ["Zionsville", "Carmel", "Westfield", "Whitestown", "Brownsburg", "Lebanon", "Fishers", "Noblesville", "Indianapolis"],
     founder: {
       "@type": "Person",
       name: site.owner,
@@ -78,7 +77,7 @@ export function serviceSchema(name: string, description: string, path: string) {
       name: site.name,
       url: site.domain,
     },
-    areaServed: ["Central Indiana", "Zionsville", "Carmel", "Westfield", "Indianapolis", "Fishers"],
+    areaServed: ["Central Indiana", "Zionsville", "Carmel", "Westfield", "Whitestown", "Brownsburg", "Lebanon", "Fishers", "Noblesville", "Indianapolis"],
     url: `${site.domain}${path}`,
   };
 }
