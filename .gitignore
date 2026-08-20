@@ -25,3 +25,4 @@ output
 
 # OS
 .DS_Store
+.vercel
