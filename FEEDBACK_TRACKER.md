@@ -4,6 +4,8 @@ Status key: `[ ]` pending · `[~]` in progress · `[x]` complete · `[!]` extern
 
 ## Site-wide
 
+> Deployment ownership: Centerline's live and production Vercel project must always be owned and deployed through Dylan's Vercel access. William's Vercel account may be used only for temporary verification previews and must not own the production domain.
+
 - [x] Navigation matches approved launch architecture.
 - [x] Footer contains six services, nine service areas, approved company copy, and no placeholder disclaimer.
 - [x] All primary CTAs use `/request-inspection`.
@@ -13,6 +15,7 @@ Status key: `[ ]` pending · `[~]` in progress · `[x]` complete · `[!]` extern
 - [!] Confirm and add public business phone number.
 - [!] Connect and end-to-end test production form delivery, spam protection, and destination inbox.
 - [!] Configure analytics/conversion tracking, Search Console, sitemap submission, and Google Business Profile after deployment.
+- [!] Link the repository to Dylan's Vercel project/account and perform the authoritative production deployment there.
 
 ## Pages
 
