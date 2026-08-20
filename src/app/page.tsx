@@ -1,135 +1,47 @@
-import { ArrowRight, ShieldCheck } from "lucide-react";
+/* eslint-disable react/no-unescaped-entities */
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { CTA } from "@/components/CTA";
-import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
-import { Process, ServiceCards } from "@/components/Sections";
+import { Process } from "@/components/Sections";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
-import { hasPublicPhone, serviceAreas, site } from "@/lib/site";
+import { locationPages, site } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: "Roofing Company Zionsville IN",
-  description: "Centerline Roofing & Exteriors provides roof inspections, repair, replacement, storm damage, gutters, and siding across Central Indiana.",
-  path: "/",
+  title: "Roofing & Exterior Contractor in Zionsville, IN | Centerline",
+  description: "Centerline Roofing & Exteriors provides roofing, storm damage restoration, gutters and siding in Zionsville and throughout Central Indiana.", path: "/",
 });
 
+const experience = [
+  { title: "Clear Answers", text: "When you have an issue with your home, you deserve to understand exactly what's going on. We'll thoroughly inspect the problem, explain what we found, answer your questions, and help you understand the best solution—whether that's a repair, a replacement, or simply the peace of mind that your roof is in good shape." },
+  { title: "Trusted Guidance", text: "Every recommendation starts with one question: What's the right solution for this homeowner? If a repair makes the most sense, we'll recommend a repair. If replacement is the better long-term investment, we'll explain why, answer every question, and help you make a confident decision." },
+  { title: "Professional From Start to Finish", text: "You should never have to wonder what's happening with your project. From prompt communication and organized scheduling to respecting your property and completing a thorough final walkthrough, we're committed to providing a professional experience from start to finish." },
+  { title: "Exceptional Craftsmanship", text: "Exceptional results start with exceptional materials. We use premium products from manufacturers we trust, then help you select the right roofing system for your home, goals, and budget. From materials to installation, every detail is held to the high standards we expect for the Centerline name." },
+];
+
+const services = [
+  { title: "Roofing", text: "From minor repairs to complete roof replacements, we'll evaluate your roof, explain what we find, and recommend the best solution for you and your home.", links: [["Roof Inspections", "/roof-inspections"], ["Roof Repair", "/roof-repair"], ["Roof Replacement", "/roof-replacement"]] },
+  { title: "Storm Damage Restoration", text: "Storm damage can leave you with a lot of questions about what happened, what needs to be repaired, and what to do next. We'll thoroughly inspect and document the damage, explain your options, and guide you through the restoration and insurance process when a claim is involved.", links: [["Explore Storm Damage Restoration", "/storm-damage-restoration"]] },
+  { title: "Gutters", text: "A well-designed gutter system does more than keep rainwater from pouring off your roof. It directs water away from your home, helping protect your roofline, siding, landscaping, and foundation. We install premium gutter systems designed for your home and built for lasting performance.", links: [["Explore Gutters", "/gutters"]] },
+  { title: "Siding", text: "Protect your home and transform its appearance with premium siding selected for lasting performance, durability, and the look you want for your home.", links: [["Explore Siding", "/siding"]] },
+];
+
+const process = [
+  ["Inspect", "We start by taking the time to understand your concerns and thoroughly inspect your home. We'll identify the problem, document what we find, and gather the information needed to determine the right next step."],
+  ["Explain", "We'll walk you through what we found, answer your questions, and make sure you understand your options. If insurance is involved, we'll also help you understand what to expect from that process."],
+  ["Plan", "Once you decide how you'd like to move forward, we'll build a clear plan for your project—from selecting the right materials and system for your home to scheduling the work and preparing for installation."],
+  ["Build", "We'll manage your project from start to finish, keep you informed along the way, and make sure the work meets the standards we expect for every Centerline project. Once the work is complete, we'll walk the finished project with you, answer any remaining questions, and make sure you're confident in the work we've done."],
+];
+
 export default function Home() {
-  return (
-    <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", url: site.domain }])} />
-      <section className="metal-panel roof-texture overflow-hidden text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[1.08fr_.92fr] md:py-24 lg:px-6">
-          <div className="flex flex-col justify-center">
-            <h1 className="max-w-4xl text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
-              Central Indiana Roofing & Exteriors Built on Trust, Discipline, and Craftsmanship
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-              Centerline Roofing & Exteriors helps homeowners and businesses protect what matters with roof inspections, repairs, replacements, storm damage support, gutters, siding, and exterior restoration across Zionsville and Central Indiana.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/request-estimate" className="focus-ring inline-flex items-center justify-center gap-2 bg-white px-6 py-4 font-black text-[#061a33]">
-                Request Free Inspection <ArrowRight size={18} />
-              </Link>
-              {hasPublicPhone ? (
-                <Link href={site.phoneHref} className="focus-ring inline-flex items-center justify-center border border-white/40 px-6 py-4 font-black text-white">
-                  Call Centerline
-                </Link>
-              ) : null}
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3 text-sm font-bold text-slate-200">
-              {["Zionsville-based", "Family-owned", "Former Indianapolis Colts offensive lineman", "Serving Central Indiana"].map((item) => (
-                <span key={item} className="border border-white/18 bg-white/8 px-3 py-2">{item}</span>
-              ))}
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -right-8 -top-8 h-40 w-40 border border-white/20" />
-            <div className="relative border border-white/20 bg-white/10 p-5 shadow-2xl backdrop-blur">
-              <div className="bg-white p-5 text-slate-900">
-                <div className="mb-4 flex items-center gap-3">
-                  <ShieldCheck className="text-[#1d66c2]" />
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#1d66c2]">Start here</p>
-                    <h2 className="text-xl font-black text-[#061a33]">Request a free inspection</h2>
-                  </div>
-                </div>
-                <LeadForm compact />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
-        <div className="mb-8 max-w-3xl">
-          <h2 className="text-3xl font-black tracking-tight text-[#061a33] md:text-4xl">Roofing and exterior services</h2>
-          <p className="mt-4 leading-7 text-slate-600">Built for homeowners who want a clear answer, a practical plan, and a contractor who treats the property with respect.</p>
-        </div>
-        <ServiceCards />
-      </section>
-
-      <section className="bg-slate-50">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[.9fr_1.1fr] lg:px-6">
-          <div className="metal-panel roof-texture min-h-[360px] p-8 text-white">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-[#b9c2cf]">Owner-led accountability</p>
-            <h2 className="mt-4 text-4xl font-black">Led by Dylan Gandy</h2>
-          </div>
-          <div className="flex flex-col justify-center">
-            <p className="text-lg leading-8 text-slate-700">
-              Dylan Gandy brings the same discipline, preparation, and team-first mindset that shaped his football career to Centerline Roofing & Exteriors. As a former Indianapolis Colts player, husband, father of four, and Zionsville resident, Dylan built Centerline around clear communication, dependable work, and doing the job the right way.
-            </p>
-            <Link href="/about" className="mt-6 inline-flex items-center gap-2 font-black text-[#1d66c2]">
-              Read the company story <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-2 lg:px-6">
-        <div>
-          <h2 className="text-3xl font-black text-[#061a33] md:text-4xl">Storm damage and insurance support without the pressure</h2>
-          <p className="mt-4 leading-7 text-slate-600">
-            Storm damage can be stressful. Centerline helps homeowners understand roof condition, document visible issues, and navigate next steps. Claim decisions belong to the insurance carrier, so the guidance stays practical and honest.
-          </p>
-          <Link href="/storm-damage" className="mt-6 inline-flex items-center gap-2 font-black text-[#1d66c2]">Storm damage support <ArrowRight size={18} /></Link>
-        </div>
-        <div>
-          <h2 className="text-3xl font-black text-[#061a33] md:text-4xl">Serving Zionsville and Central Indiana</h2>
-          <p className="mt-4 leading-7 text-slate-600">
-            Centerline serves {serviceAreas.join(", ")}, and surrounding Central Indiana communities.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {serviceAreas.map((area) => (
-              <Link key={area} href={`/service-areas/${area.toLowerCase().replaceAll(" ", "-")}-in`} className="border border-slate-200 px-3 py-2 text-sm font-bold text-slate-700 hover:border-[#1d66c2] hover:text-[#1d66c2]">
-                {area}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
-          <h2 className="text-3xl font-black text-[#061a33] md:text-4xl">A straightforward process</h2>
-          <div className="mt-8"><Process /></div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
-        <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="text-3xl font-black text-[#061a33] md:text-4xl">Reviews coming soon</h2>
-            <p className="mt-3 text-slate-600">Centerline will add real customer feedback after reviews are available and permissioned for publication.</p>
-          </div>
-          <Link href="/reviews" className="font-black text-[#1d66c2]">Review page</Link>
-        </div>
-        <div className="border border-slate-200 bg-slate-50 p-6">
-          <p className="max-w-3xl leading-7 text-slate-700">
-            Until then, the site avoids fake names, ratings, and customer claims.
-          </p>
-        </div>
-      </section>
-      <CTA />
-    </>
-  );
+  return <>
+    <JsonLd data={breadcrumbSchema([{ name: "Home", url: site.domain }])} />
+    <section className="metal-panel roof-texture text-white"><div className="mx-auto max-w-7xl px-4 py-20 md:py-28 lg:px-6"><h1 className="max-w-5xl text-4xl font-black leading-[1.04] tracking-tight sm:text-5xl lg:text-6xl">Clear Answers. Exceptional Craftsmanship. Roofing Done Right.</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">When your home needs attention, you deserve a contractor who brings clarity, craftsmanship, and professionalism to every step of the process. Whether it's roofing, gutters, siding, or storm damage, we're here to help you move forward with confidence.</p><Link href="/request-inspection" className="focus-ring mt-8 inline-flex items-center gap-2 bg-white px-6 py-4 font-black text-[#061a33]">Request a Free Inspection<ArrowRight size={18} /></Link></div></section>
+    <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6"><h2 className="text-3xl font-black text-[#061a33] md:text-4xl">The Centerline Experience</h2><div className="mt-8 grid gap-4 md:grid-cols-2">{experience.map((item) => <article key={item.title} className="border border-slate-200 bg-white p-6 shadow-sm"><h3 className="text-xl font-black text-[#061a33]">{item.title}</h3><p className="mt-3 leading-7 text-slate-600">{item.text}</p></article>)}</div></section>
+    <section className="bg-slate-50"><div className="mx-auto max-w-7xl px-4 py-16 lg:px-6"><h2 className="text-3xl font-black text-[#061a33] md:text-4xl">Roofing & Exterior Services</h2><p className="mt-4 max-w-3xl leading-7 text-slate-600">From your roof to your siding and gutters, we provide complete exterior solutions designed to protect your home, enhance its appearance, and stand the test of time.</p><div className="mt-8 grid gap-4 md:grid-cols-2">{services.map((service) => <article key={service.title} className="flex flex-col border border-slate-200 bg-white p-6"><h3 className="text-xl font-black text-[#061a33]">{service.title}</h3><p className="mt-3 flex-1 leading-7 text-slate-600">{service.text}</p><div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">{service.links.map(([label, href]) => <Link key={href} href={href} className="inline-flex items-center gap-1 text-sm font-black text-[#1d66c2]">{label}<ArrowRight size={15} /></Link>)}</div></article>)}</div></div></section>
+    <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[.72fr_1.28fr] lg:px-6"><div className="metal-panel roof-texture min-h-80 p-8 text-white"><p className="text-sm font-black uppercase tracking-[.18em] text-slate-300">Meet the owner</p><h2 className="mt-4 text-4xl font-black">Built on Trust, Discipline & Craftsmanship</h2></div><div className="space-y-4 leading-8 text-slate-700"><p>Centerline Roofing & Exteriors was founded with a simple belief: homeowners should be able to expect a contractor who takes the time to understand their needs, provides honest guidance, communicates clearly, and takes responsibility for getting the job done right.</p><p>I'm Dylan Gandy, owner of Centerline and a Zionsville resident. Before starting Centerline, my path took me from playing offensive line in the NFL to teaching and coaching here in our community. Football taught me the importance of preparation, accountability, attention to detail, and doing your job well because other people are counting on you. Teaching reinforced something equally important: people make better decisions when they truly understand what's in front of them.</p><p>Those experiences shape the way I lead Centerline today. My role is to make sure you have someone you can trust throughout the entire process—someone who will help you understand the problem, walk you through your options, choose the right solution and materials for your home, oversee the project, and stand behind the finished work.</p><Link href="/about" className="inline-flex items-center gap-2 font-black text-[#1d66c2]">About Centerline<ArrowRight size={18} /></Link></div></section>
+    <section className="bg-slate-50"><div className="mx-auto max-w-7xl px-4 py-16 lg:px-6"><h2 className="text-3xl font-black text-[#061a33] md:text-4xl">The Centerline Process</h2><p className="mt-4 max-w-3xl leading-7 text-slate-600">A straightforward process, clear communication, and no surprises. You'll know what we're doing, why we're doing it, and what comes next.</p><div className="mt-8"><Process steps={process} /></div><Link href="/request-inspection" className="focus-ring mt-8 inline-flex items-center gap-2 bg-[#1d66c2] px-5 py-3 font-black text-white">Request a Free Inspection<ArrowRight size={18} /></Link></div></section>
+    <section className="mx-auto max-w-7xl px-4 py-14 lg:px-6"><h2 className="text-3xl font-black text-[#061a33]">Serving Zionsville & Greater Central Indiana</h2><p className="mt-4 max-w-5xl leading-7 text-slate-600">Centerline Roofing & Exteriors is locally based in Zionsville and proudly serves homeowners throughout Central Indiana. We provide roofing, storm damage restoration, gutters, and siding throughout Zionsville, Carmel, Westfield, Whitestown, Brownsburg, Lebanon, Fishers, Noblesville, Indianapolis, and surrounding communities.</p><p className="mt-3 text-slate-600">Not sure if you're in our service area? Get in touch—we'd be happy to help.</p><div className="mt-5 flex flex-wrap gap-2">{locationPages.map((area) => <Link key={area.slug} href={`/service-areas/${area.slug}`} className="border border-slate-200 px-3 py-2 text-sm font-bold text-slate-700 hover:border-[#1d66c2] hover:text-[#1d66c2]">{area.city}</Link>)}</div><Link href="/contact" className="mt-5 inline-flex items-center gap-2 font-black text-[#1d66c2]">Contact Centerline<ArrowRight size={18} /></Link></section>
+    <CTA title="Ready for a Clear Answer?" text="Whether you know exactly what your home needs or you're not sure where to start, we're here to help. Schedule a free inspection and we'll take the time to understand your concerns, evaluate your home, and help you determine the right next step." />
+  </>;
 }

@@ -11,26 +11,16 @@ const groups = [
     label: "Roofing",
     links: [
       ["Roof Inspections", "/roof-inspections"],
-      ["Roof Replacement", "/roof-replacement"],
       ["Roof Repair", "/roof-repair"],
-      ["Storm Damage", "/storm-damage"],
+      ["Roof Replacement", "/roof-replacement"],
     ],
   },
-  {
-    label: "Exteriors",
-    links: [
-      ["Gutters", "/gutters"],
-      ["Siding", "/siding"],
-      ["Interior Restoration", "/interior-restoration"],
-    ],
-  },
-  { label: "Commercial", links: [["Commercial Roofing", "/commercial-roofing"]] },
 ];
 
 const simpleLinks = [
-  ["Insurance Claims", "/insurance-claims"],
-  ["Gallery", "/gallery"],
-  ["Reviews", "/reviews"],
+  ["Storm Damage", "/storm-damage-restoration"],
+  ["Gutters", "/gutters"],
+  ["Siding", "/siding"],
   ["About", "/about"],
   ["Contact", "/contact"],
 ];
@@ -69,8 +59,8 @@ export function Header() {
                 Call
               </Link>
             ) : null}
-            <Link href="/request-estimate" className="focus-ring inline-flex h-11 items-center bg-[#1d66c2] px-5 text-sm font-black text-white shadow-sm hover:bg-[#1557aa]">
-              Request Free Inspection
+            <Link href="/request-inspection" className="focus-ring inline-flex h-11 items-center bg-[#1d66c2] px-5 text-sm font-black text-white shadow-sm hover:bg-[#1557aa]">
+              Request a Free Inspection
             </Link>
           </div>
           <button onClick={() => setOpen(true)} className="focus-ring grid h-11 w-11 place-items-center border border-slate-300 lg:hidden" aria-label="Open menu">
@@ -109,8 +99,8 @@ export function Header() {
               </div>
             </nav>
             <div className="mt-auto grid gap-2 border-t border-slate-200 p-4">
-              <Link href="/request-estimate" onClick={() => setOpen(false)} className="focus-ring bg-[#1d66c2] px-5 py-3 text-center font-black text-white">
-                Request Free Inspection
+              <Link href="/request-inspection" onClick={() => setOpen(false)} className="focus-ring bg-[#1d66c2] px-5 py-3 text-center font-black text-white">
+                Request a Free Inspection
               </Link>
               {hasPublicPhone ? (
                 <Link href={site.phoneHref} className="focus-ring border border-slate-300 px-5 py-3 text-center font-black text-[#061a33]">

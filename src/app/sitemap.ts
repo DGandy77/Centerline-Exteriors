@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
-import { locationPages, servicePages, site } from "@/lib/site";
+import { servicePages } from "@/lib/service-content";
+import { locationPages, site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["/", "/about", "/gallery", "/reviews", "/contact", "/request-estimate", "/service-areas"];
+  const staticRoutes = ["/", "/about", "/contact", "/request-inspection", "/service-areas"];
   const serviceRoutes = servicePages.map((page) => `/${page.slug}`);
   const locationRoutes = locationPages.map((page) => `/service-areas/${page.slug}`);
   return [...staticRoutes, ...serviceRoutes, ...locationRoutes].map((route) => ({
