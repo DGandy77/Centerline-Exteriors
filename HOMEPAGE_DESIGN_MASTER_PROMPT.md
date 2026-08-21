@@ -16,14 +16,15 @@ Create a page that feels as visually confident and conversion-focused as Raptor 
 
 ## Page experience
 
-1. Build a cinematic, full-bleed hero with an immediate service-area signal, large outcome-led headline, readable supporting message, primary inspection CTA, and a secondary path to explore services.
-2. Follow with a compact trust/positioning band that communicates local ownership, homeowner-first recommendations, and complete exterior capability without inventing numbers or credentials.
-3. Present the Centerline Experience as four highly scannable principles with strong numbering and progressive visual rhythm.
-4. Turn services into a premium bento-style system with differentiated color, iconography, hierarchy, and clear page links.
-5. Give storm response its own urgent-but-calm conversion moment.
-6. Make Dylan’s owner story a meaningful trust section using his approved NFL, teaching, coaching, and Zionsville story—never fabricate a portrait or testimonial.
-7. Present the Inspect → Explain → Plan → Build process as a visual journey.
-8. Close with local service-area confidence and a high-contrast inspection CTA.
+The Google Doc titled `Centerline Homepage updates` is the sole authority for customer-facing homepage language. Render every item labeled HEADLINE, SECTION LABEL, BODY COPY, CARD TITLE, STEP TITLE, BUTTON, or LINK exactly as supplied. Do not display builder labels, layout instructions, card labels, step labels, photography notes, or quick-layout notes. Do not shorten approved paragraphs or introduce additional public-facing claims, taglines, trust labels, or promotional copy.
+
+1. Build a cinematic, full-bleed hero with the exact approved headline, body copy, and inspection CTA.
+2. Present The Centerline Experience as four premium cards with the exact approved titles and complete card copy.
+3. Turn the four approved service groups into a dynamic bento system. Keep Roofing as one card with its three required page links.
+4. Make Dylan’s owner story a meaningful split section with the exact section label, headline, three paragraphs, and About Centerline link.
+5. Present the exact Inspect → Explain → Plan → Build content as a numbered visual journey.
+6. Keep the approved service-area section compact, linking each named community to its location page and preserving the Contact Centerline link.
+7. Close with the exact approved full-width final CTA.
 
 ## UX, accessibility, and performance requirements
 

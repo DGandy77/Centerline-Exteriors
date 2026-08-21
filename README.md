@@ -9,7 +9,7 @@ Production-ready Next.js App Router site for Centerline Roofing & Exteriors.
 - Tailwind CSS
 - Static generation-ready route structure
 - JSON-LD schema helpers
-- Accessible lead form scaffold
+- Accessible lead form with server-side Resend delivery
 
 ## Local Setup
 
@@ -46,27 +46,19 @@ Update these before launch:
 
 ## Lead Form Wiring
 
-The lead form is implemented in:
+The contact and request-inspection forms submit to a server-only API route and send through Resend:
 
 `src/components/LeadForm.tsx`
 
-It currently uses safe client-side validation and a placeholder success state. Production options:
-
-- Vercel Server Action + Resend
-- HubSpot forms/API
-- Formspree
-- CRM webhook
-
-Suggested environment variables:
+Configure these environment variables in Dylan's Vercel project:
 
 ```bash
 RESEND_API_KEY=
+RESEND_FROM_EMAIL=Centerline Website <website@send.centerlineext.com>
 LEAD_TO_EMAIL=Dylan@centerlineext.com
-HUBSPOT_PORTAL_ID=
-CRM_WEBHOOK_URL=
 ```
 
-Do not commit secrets.
+The sending domain must be verified in Dylan's Resend account. See `RESEND_SETUP.md` for the complete setup and test checklist. Never commit or share the API key.
 
 ## Vercel Deployment
 
