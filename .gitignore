@@ -11,6 +11,7 @@ build
 # local env
 .env
 .env*.local
+.vercel
 
 # debug and cache
 npm-debug.log*
