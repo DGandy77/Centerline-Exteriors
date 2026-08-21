@@ -13,7 +13,8 @@ Status key: `[ ]` pending · `[~]` in progress · `[x]` complete · `[!]` extern
 - [x] Mobile, accessibility, reusable design system, and photography-ready layouts reviewed.
 - [x] Canonicals, sitemap, robots, internal links, and accurate structured data reviewed.
 - [!] Confirm and add public business phone number.
-- [!] Connect and end-to-end test production form delivery, spam protection, and destination inbox.
+- [x] Contact and request-inspection forms wired to a validated server-only Resend endpoint with a honeypot and honest success/error states.
+- [!] Dylan: verify the sending domain, create a Resend API key, add the three Vercel environment variables, redeploy, and confirm delivery to `Dylan@centerlineext.com`.
 - [!] Configure analytics/conversion tracking, Search Console, sitemap submission, and Google Business Profile after deployment.
 - [!] Link the repository to Dylan's Vercel project/account and perform the authoritative production deployment there.
 
