@@ -12,18 +12,20 @@ export function CTA({
   button?: string;
 }) {
   return (
-    <section className="metal-panel roof-texture text-white">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-14 md:flex-row md:items-center md:justify-between lg:px-6">
-        <div>
-          <h2 className="max-w-2xl text-3xl font-black tracking-tight md:text-4xl">{title}</h2>
-          <p className="mt-3 max-w-2xl text-slate-200">{text}</p>
+    <section className="interior-cta text-white">
+      <div className="interior-cta-line" aria-hidden="true" />
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-9 px-4 py-20 sm:px-6 md:flex-row md:items-center md:justify-between md:py-24 lg:px-8">
+        <div className="max-w-3xl">
+          <div className="interior-rule" aria-hidden="true" />
+          <h2 className="mt-6 text-[clamp(2.4rem,5vw,4.75rem)] font-black leading-[.98] tracking-[-0.05em]">{title}</h2>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">{text}</p>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Link href="/request-inspection" className="focus-ring inline-flex items-center justify-center gap-2 bg-white px-5 py-3 font-black text-[#061a33]">
+        <div className="flex shrink-0 flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+          <Link href="/request-inspection" className="focus-ring interior-button interior-button-light">
             {button} <ArrowRight size={18} />
           </Link>
           {hasPublicPhone ? (
-            <Link href={site.phoneHref} className="focus-ring inline-flex items-center justify-center gap-2 border border-white/40 px-5 py-3 font-black text-white">
+            <Link href={site.phoneHref} className="focus-ring interior-button border border-white/35 bg-white/5 text-white backdrop-blur-sm hover:bg-white hover:text-[#061a33]">
               <Phone size={18} /> Call Centerline
             </Link>
           ) : null}

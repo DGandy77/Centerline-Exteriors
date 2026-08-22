@@ -43,7 +43,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
 
   return (
     <form
-      className="grid gap-4"
+      className="grid gap-5"
       onSubmit={handleSubmit}
       aria-busy={status === "submitting"}
     >
@@ -51,35 +51,35 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
         Company
         <input name="company" tabIndex={-1} autoComplete="off" />
       </label>
-      <div className={compact ? "grid gap-4" : "grid gap-4 md:grid-cols-2"}>
-        <label className="grid gap-2 text-sm font-bold text-slate-800">
+      <div className={compact ? "grid gap-5" : "grid gap-5 md:grid-cols-2"}>
+        <label className="grid gap-2.5 text-sm font-black text-[#061a33]">
           Name
-          <input required maxLength={100} name="name" autoComplete="name" className="h-12 border border-slate-300 px-3 font-normal" />
+          <input required maxLength={100} name="name" autoComplete="name" className="form-control" />
         </label>
-        <label className="grid gap-2 text-sm font-bold text-slate-800">
+        <label className="grid gap-2.5 text-sm font-black text-[#061a33]">
           Email
-          <input required maxLength={254} type="email" name="email" autoComplete="email" className="h-12 border border-slate-300 px-3 font-normal" />
+          <input required maxLength={254} type="email" name="email" autoComplete="email" className="form-control" />
         </label>
-        <label className="grid gap-2 text-sm font-bold text-slate-800">
+        <label className="grid gap-2.5 text-sm font-black text-[#061a33]">
           Phone
-          <input required maxLength={40} type="tel" name="phone" autoComplete="tel" className="h-12 border border-slate-300 px-3 font-normal" />
+          <input required maxLength={40} type="tel" name="phone" autoComplete="tel" className="form-control" />
         </label>
-        <label className="grid gap-2 text-sm font-bold text-slate-800">
+        <label className="grid gap-2.5 text-sm font-black text-[#061a33]">
           Property Address
-          <input required maxLength={200} name="address" autoComplete="street-address" className="h-12 border border-slate-300 px-3 font-normal" />
+          <input required maxLength={200} name="address" autoComplete="street-address" className="form-control" />
         </label>
-        <label className="grid gap-2 text-sm font-bold text-slate-800">
+        <label className="grid gap-2.5 text-sm font-black text-[#061a33]">
           Service Needed
-          <select required name="service" className="h-12 border border-slate-300 px-3 font-normal">
+          <select required name="service" className="form-control">
             <option value="">Select a Service</option>
             {services.map((service) => (
               <option key={service}>{service}</option>
             ))}
           </select>
         </label>
-        <label className="grid gap-2 text-sm font-bold text-slate-800">
+        <label className="grid gap-2.5 text-sm font-black text-[#061a33]">
           Preferred Contact
-          <select required name="contactMethod" className="h-12 border border-slate-300 px-3 font-normal">
+          <select required name="contactMethod" className="form-control">
             <option value="">Select Preference</option>
             <option>Phone Call</option>
             <option>Text Message</option>
@@ -87,25 +87,25 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
           </select>
         </label>
       </div>
-      <label className="grid gap-2 text-sm font-bold text-slate-800">
+      <label className="grid gap-2.5 text-sm font-black text-[#061a33]">
         Tell Us What&apos;s Going On
-        <textarea required maxLength={4000} name="message" rows={5} className="border border-slate-300 p-3 font-normal" placeholder="Tell us what you've noticed, what you're concerned about, or what you're hoping to accomplish with your home." />
+        <textarea required maxLength={4000} name="message" rows={6} className="form-control !h-auto py-4" placeholder="Tell us what you've noticed, what you're concerned about, or what you're hoping to accomplish with your home." />
       </label>
       <label className="flex gap-3 text-sm leading-6 text-slate-700">
         <input required type="checkbox" name="consent" className="mt-1 h-4 w-4" />
         <span>I agree to be contacted by Centerline Roofing & Exteriors about my request. Message and data rates may apply.</span>
       </label>
-      <button disabled={status === "submitting"} className="focus-ring h-12 bg-[#1d66c2] px-5 font-black text-white hover:bg-[#1557aa] disabled:cursor-wait disabled:opacity-65">
+      <button disabled={status === "submitting"} className="focus-ring interior-button interior-button-blue mt-1 w-full disabled:cursor-wait disabled:opacity-65">
         {status === "submitting" ? "Sending…" : "Send My Request"}
       </button>
       {status === "success" ? (
-        <p role="status" aria-live="polite" className="border border-emerald-300 bg-emerald-50 p-3 text-sm font-semibold text-emerald-950">
+        <p role="status" aria-live="polite" className="border-l-4 border-emerald-500 bg-emerald-50 p-4 text-sm font-semibold leading-6 text-emerald-950">
           <strong className="block">Your request was submitted successfully.</strong>
           Centerline will be in touch about the next step.
         </p>
       ) : null}
       {status === "error" ? (
-        <p role="alert" className="border border-red-300 bg-red-50 p-3 text-sm font-semibold text-red-950">
+        <p role="alert" className="border-l-4 border-red-500 bg-red-50 p-4 text-sm font-semibold leading-6 text-red-950">
           <strong className="block">We couldn&apos;t send your request right now.</strong>
           Please try again or email <a className="underline" href={`mailto:${site.email}`}>{site.email}</a>.
         </p>

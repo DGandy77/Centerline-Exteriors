@@ -1,8 +1,10 @@
+import { ArrowRight, MapPin } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLd";
+import { EditorialCards, InteriorHero, SectionHeading } from "@/components/InteriorPage";
 import { breadcrumbSchema, pageMetadata, serviceSchema } from "@/lib/seo";
 import { locationPages, primaryServices, site } from "@/lib/site";
 
@@ -22,12 +24,12 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
   const crumbs = [{ label: "Home", href: "/" }, { label: "Service Areas", href: "/service-areas" }, { label: `${location.city}, IN`, href: path }];
   return <>
     <JsonLd data={[breadcrumbSchema(crumbs.map((item) => ({ name: item.label, url: `${site.domain}${item.href === "/" ? "" : item.href}` }))), serviceSchema(`Roofing and exterior services in ${location.city}, Indiana`, location.description, path)]} />
-    <section className="metal-panel roof-texture text-white"><div className="mx-auto max-w-7xl px-4 py-16 md:py-20 lg:px-6"><h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight md:text-5xl">{location.hero}</h1><p className="mt-5 max-w-3xl text-lg leading-8 text-slate-200">{location.heroCopy}</p><Link href="/request-inspection" className="focus-ring mt-7 inline-flex bg-white px-5 py-3 font-black text-[#061a33]">Request a Free Inspection</Link></div></section>
-    <div className="mx-auto max-w-7xl px-4 py-7 lg:px-6"><Breadcrumbs items={crumbs} /></div>
-    <section className="mx-auto max-w-5xl px-4 py-12 lg:px-6"><h2 className="text-3xl font-black text-[#061a33] md:text-4xl">{location.introHeading}</h2><div className="mt-5 space-y-4 leading-8 text-slate-700">{location.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></section>
-    <section className="bg-slate-50"><div className="mx-auto max-w-7xl px-4 py-16 lg:px-6"><h2 className="text-3xl font-black text-[#061a33] md:text-4xl">Roofing & Exterior Services</h2><div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{primaryServices.map((service) => <Link key={service.href} href={service.href} className="group border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#1d66c2] hover:shadow-lg"><h3 className="text-xl font-black text-[#061a33] group-hover:text-[#1d66c2]">{service.title}</h3><p className="mt-3 leading-7 text-slate-600">{service.summary}</p></Link>)}</div></div></section>
-    <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6"><h2 className="max-w-4xl text-3xl font-black text-[#061a33] md:text-4xl">{location.considerationsHeading}</h2><div className="mt-8 grid gap-4 md:grid-cols-3">{location.considerations.map((card) => <article key={card.title} className="border border-slate-200 p-6"><h3 className="text-xl font-black text-[#061a33]">{card.title}</h3><p className="mt-3 leading-7 text-slate-600">{card.text}</p></article>)}</div></section>
-    <section className="bg-slate-50"><div className="mx-auto max-w-7xl px-4 py-12 lg:px-6"><h2 className="text-2xl font-black text-[#061a33]">Nearby Communities</h2><div className="mt-5 flex flex-wrap gap-2">{locationPages.filter((page) => page.slug !== location.slug).map((page) => <Link key={page.slug} href={`/service-areas/${page.slug}`} className="border border-slate-200 bg-white px-3 py-2 text-sm font-bold text-slate-700 hover:border-[#1d66c2] hover:text-[#1d66c2]">{page.city}, IN</Link>)}</div></div></section>
+    <InteriorHero title={location.hero} text={[location.heroCopy]} button="Request a Free Inspection" />
+    <div className="border-b border-slate-200 bg-white"><div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8"><Breadcrumbs items={crumbs} /></div></div>
+    <section className="interior-section bg-white"><div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.82fr_1.18fr] lg:px-8"><SectionHeading>{location.introHeading}</SectionHeading><div className="interior-prose space-y-5">{location.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div></section>
+    <section className="interior-section interior-section-tint"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><SectionHeading>Roofing &amp; Exterior Services</SectionHeading><div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{primaryServices.map((service, index) => <Link key={service.href} href={service.href} className="service-link-card group"><span className="flex items-center justify-between text-xs font-black tracking-[.18em] text-[#1d66c2]" aria-hidden="true">{String(index + 1).padStart(2, "0")}<ArrowRight className="transition-transform group-hover:translate-x-1" size={18} /></span><h3 className="mt-10 text-2xl font-black tracking-[-0.03em] text-[#061a33] transition group-hover:text-[#1d66c2]">{service.title}</h3><p className="mt-4 leading-7 text-slate-600">{service.summary}</p></Link>)}</div></div></section>
+    <section className="interior-section bg-white"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><SectionHeading className="max-w-5xl">{location.considerationsHeading}</SectionHeading><EditorialCards cards={location.considerations} /></div></section>
+    <section className="border-y border-slate-200 bg-[#edf5ff]"><div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8"><div className="flex items-center gap-3"><MapPin className="text-[#1d66c2]" size={25} /><h2 className="text-2xl font-black tracking-[-0.025em] text-[#061a33]">Nearby Communities</h2></div><div className="mt-6 flex flex-wrap gap-2.5">{locationPages.filter((page) => page.slug !== location.slug).map((page) => <Link key={page.slug} href={`/service-areas/${page.slug}`} className="location-chip">{page.city}, IN</Link>)}</div></div></section>
     <CTA title={location.ctaHeading} text={location.ctaText} />
   </>;
 }

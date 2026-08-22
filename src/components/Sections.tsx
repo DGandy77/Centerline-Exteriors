@@ -20,11 +20,11 @@ export function ServiceCards() {
 
 export function CheckList({ items }: { items: string[] }) {
   return (
-    <ul className="grid gap-3">
+    <ul className="grid gap-0 divide-y divide-slate-200">
       {items.map((item) => (
-        <li key={item} className="flex gap-3 text-slate-700">
-          <CheckCircle2 className="mt-0.5 shrink-0 text-[#1d66c2]" size={19} />
-          <span>{item}</span>
+        <li key={item} className="flex gap-3 py-3.5 text-slate-700 first:pt-0 last:pb-0">
+          <CheckCircle2 className="mt-0.5 shrink-0 text-[#1d66c2]" size={20} />
+          <span className="font-semibold leading-6">{item}</span>
         </li>
       ))}
     </ul>
@@ -50,15 +50,17 @@ export function Process({ steps = [
     ["Plan", "Align scope, timing, material options, and next steps."],
     ["Build", "Complete the work with clean communication and cleanup."],
   ] }: { steps?: string[][] }) {
+  const desktopColumns = steps.length === 5 ? "lg:grid-cols-5" : "lg:grid-cols-4";
+
   return (
-    <div className="grid gap-4 md:grid-cols-4">
+    <ol className={`interior-process grid gap-4 md:grid-cols-2 ${desktopColumns}`}>
       {steps.map(([title, text], index) => (
-        <div key={`${title}-${index}`} className="border border-slate-200 bg-white p-5">
-          <span className="text-sm font-black text-[#1d66c2]">{String(index + 1).padStart(2, "0")}</span>
-          <h3 className="mt-3 text-xl font-black text-[#061a33]">{title}</h3>
-          <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
-        </div>
+        <li key={`${title}-${index}`} className="interior-process-step">
+          <span className="interior-process-number">{String(index + 1).padStart(2, "0")}</span>
+          <h3 className="mt-8 text-2xl font-black tracking-[-0.025em] text-[#061a33]">{title}</h3>
+          <p className="mt-4 leading-7 text-slate-600">{text}</p>
+        </li>
       ))}
-    </div>
+    </ol>
   );
 }
