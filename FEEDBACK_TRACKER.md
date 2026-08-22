@@ -11,6 +11,7 @@ Status key: `[ ]` pending · `[~]` in progress · `[x]` complete · `[!]` extern
 - [x] All primary CTAs use `/request-inspection`.
 - [x] Commercial Roofing, standalone Insurance Claims, Interior Restoration, Gallery, and Reviews are removed from public launch architecture.
 - [x] Mobile, accessibility, reusable design system, and photography-ready layouts reviewed.
+- [x] Premium interior-page design overhaul completed across all service, company, form, service-area, and city pages with approved copy preserved.
 - [x] Canonicals, sitemap, robots, internal links, and accurate structured data reviewed.
 - [!] Confirm and add public business phone number.
 - [x] Contact and request-inspection forms wired to a validated server-only Resend endpoint with a honeypot and honest success/error states.
