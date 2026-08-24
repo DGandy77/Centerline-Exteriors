@@ -109,7 +109,7 @@ Perform Step 10. Test the production site on centerlineext.com and www.centerlin
 **Prompt:**
 
 ```text
-Perform Step 11. Guide us through post-launch search setup: Google Business Profile website URL, Google Search Console property for centerlineext.com, sitemap submission at https://centerlineext.com/sitemap.xml, and NAP consistency checks across the site and profile.
+Perform Step 11. Guide us through post-launch search setup: Google Business Profile website URL, Google Search Console property for centerlineext.com, sitemap submission at https://www.centerlineext.com/sitemap.xml, and NAP consistency checks across the site and profile.
 ```
 
 ## Step 12: Final Go/No-Go

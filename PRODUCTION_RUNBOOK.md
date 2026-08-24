@@ -138,7 +138,7 @@ After launch:
 1. Create or confirm Google Business Profile.
 2. Add the production website URL to the profile.
 3. Create Google Search Console property for `centerlineext.com`.
-4. Submit `https://centerlineext.com/sitemap.xml`.
+4. Submit `https://www.centerlineext.com/sitemap.xml`.
 5. Confirm footer NAP matches Google Business Profile and major citations.
 
 ## 10. Go/No-Go

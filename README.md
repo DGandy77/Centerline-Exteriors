@@ -122,7 +122,7 @@ Not included:
 Implemented:
 
 - Unique metadata for every route
-- Canonicals on `https://centerlineext.com`
+- Canonicals on `https://www.centerlineext.com`
 - Open Graph and Twitter metadata
 - `sitemap.xml`
 - `robots.txt`

@@ -1,7 +1,7 @@
 export const site = {
   name: "Centerline Roofing & Exteriors",
   owner: "Dylan Gandy",
-  domain: "https://centerlineext.com",
+  domain: "https://www.centerlineext.com",
   displayDomain: "Centerlineext.com",
   email: "Dylan@centerlineext.com",
   phone: "",
